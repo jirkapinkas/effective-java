@@ -2,6 +2,7 @@ package com.test.effectivejava;
 
 import com.test.effectivejava.pojo.Person;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -61,7 +62,13 @@ public class Main2 {
 
         printPeople(p1, p2, null, new Person());
 
-        isDead(null);
+//        isDead(null);
+
+
+        System.out.println(0.1 + 0.2); // NEEEEEEE!!!
+        BigDecimal b1 = BigDecimal.valueOf(0.1);
+        BigDecimal b2 = BigDecimal.valueOf(0.2);
+        System.out.println(b1.add(b2).doubleValue());
     }
 
     public static void printPeople(Person ... people) { // varargs (nahrada statickeho pole)
