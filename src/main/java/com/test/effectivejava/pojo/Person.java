@@ -2,6 +2,7 @@ package com.test.effectivejava.pojo;
 
 import lombok.*;
 
+@EqualsAndHashCode
 @Builder
 @Getter
 @Setter

@@ -1,5 +1,7 @@
 package com.test.effectivejava;
 
+import com.test.effectivejava.pojo.Person;
+
 public class Main2 {
 
     public static void main(String[] args) {
@@ -32,5 +34,13 @@ public class Main2 {
         Integer i4 = Integer.valueOf(10_000);
         System.out.println(i3 == i4); // SPATNE, false
         System.out.println(i3.equals(i4)); // SPRAVNE, true
+
+        Person p1 = Person.builder()
+                .firstName("Jirka")
+                .build();
+        Person p2 = Person.builder()
+                .firstName("Jirka")
+                .build();
+        System.out.println(p1.equals(p2));
     }
 }
