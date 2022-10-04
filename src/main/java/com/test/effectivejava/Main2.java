@@ -67,3 +67,14 @@ public class Main2 {
     }
 
 }
+
+enum Days {
+
+    MONDAY(0), FRIDAY(5), SATURDAY(6);
+
+    private int index;
+
+    Days(int index) {
+        this.index = index;
+    }
+}
