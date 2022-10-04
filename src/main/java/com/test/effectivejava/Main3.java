@@ -35,6 +35,7 @@ public class Main3 {
             s1 += i;
         }
 
+        // takhle ano :-)
         StringBuilder s2 = new StringBuilder();
         for (int i = 0; i < 1_000; i++) {
             s2.append(i);
