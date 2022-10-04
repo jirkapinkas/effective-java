@@ -2,6 +2,7 @@ package com.test.effectivejava;
 
 import com.test.effectivejava.pojo.Person;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main2 {
@@ -50,5 +51,10 @@ public class Main2 {
         for (Person person : people) {
             System.out.println(person);
         }
+
+        // TOHLE NEE!!!
+        ArrayList<String> list1 = new ArrayList<>();
+        // TOHLE ANO!!!
+        List<String> list2 = new ArrayList<>();
     }
 }
