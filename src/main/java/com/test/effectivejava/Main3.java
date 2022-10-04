@@ -20,6 +20,14 @@ public class Main3 {
 
         // OK ^_^
         integers.forEach(System.out::println);
+
+        // Pozor na autoboxing
+//        Long sum = 0L; // tohle ma byt spravne "long"
+//        for (long i = 0; i < Integer.MAX_VALUE; i++) {
+//            sum += i;
+//        }
+//        System.out.println(sum);
+
     }
 
 }
