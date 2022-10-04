@@ -2,6 +2,8 @@ package com.test.effectivejava;
 
 import com.test.effectivejava.pojo.Person;
 
+import java.util.List;
+
 public class Main2 {
 
     public static void main(String[] args) {
@@ -42,5 +44,11 @@ public class Main2 {
                 .firstName("Jirka")
                 .build();
         System.out.println(p1.equals(p2));
+
+        // toString
+        List<Person> people = List.of(p1, p2);
+        for (Person person : people) {
+            System.out.println(person);
+        }
     }
 }

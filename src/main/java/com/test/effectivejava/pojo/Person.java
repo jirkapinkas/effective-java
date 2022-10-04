@@ -1,11 +1,12 @@
 package com.test.effectivejava.pojo;
 
 import lombok.*;
-
-@EqualsAndHashCode
+@Data
+//@ToString
+//@EqualsAndHashCode
+//@Getter
+//@Setter
 @Builder
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Person {
