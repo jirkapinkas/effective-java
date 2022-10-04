@@ -28,6 +28,18 @@ public class Main3 {
 //        }
 //        System.out.println(sum);
 
+        // Beware the performance of string concatenation => StringBuilder
+        // takhle nee!!!
+        String s1 = "";
+        for (int i = 0; i < 1_000; i++) {
+            s1 += i;
+        }
+
+        StringBuilder s2 = new StringBuilder();
+        for (int i = 0; i < 1_000; i++) {
+            s2.append(i);
+        }
+
     }
 
 }
