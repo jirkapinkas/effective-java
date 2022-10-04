@@ -56,5 +56,14 @@ public class Main2 {
         ArrayList<String> list1 = new ArrayList<>();
         // TOHLE ANO!!!
         List<String> list2 = new ArrayList<>();
+
+        printPeople(p1, p2, null, new Person());
     }
+
+    public static void printPeople(Person ... people) { // varargs (nahrada statickeho pole)
+        for (Person person : people) {
+            System.out.println(person);
+        }
+    }
+
 }
