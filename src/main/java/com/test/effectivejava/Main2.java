@@ -4,6 +4,8 @@ import com.test.effectivejava.pojo.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Main2 {
 
@@ -58,12 +60,33 @@ public class Main2 {
         List<String> list2 = new ArrayList<>();
 
         printPeople(p1, p2, null, new Person());
+
+        isDead(null);
     }
 
     public static void printPeople(Person ... people) { // varargs (nahrada statickeho pole)
         for (Person person : people) {
             System.out.println(person);
         }
+    }
+
+    // Check parameters for validity
+    public static boolean isDead(Person person) {
+        Objects.requireNonNull(person);
+        return ! person.isAlive();
+    }
+
+    public static List<String> getStrings(List<Person> persons) {
+        if(persons == null) {
+            return null;
+        }
+        if(persons.isEmpty()) {
+//            return null; // SPATNE!!!
+            return List.of(); // SPRAVNE! Return empty collections or arrays, not nulls
+        }
+        return persons.stream()
+                .map(Person::getFirstName)
+                .toList();
     }
 
 }
