@@ -4,10 +4,8 @@ package com.test.effectivejava.streams;
 
 import com.test.effectivejava.pojo.Person;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.text.Collator;
+import java.util.*;
 
 interface I1 {
 
@@ -46,7 +44,7 @@ public class Main_01_Lambda {
         List<Person> people = Arrays.asList(
                 Person.builder().firstName("Michal").lastName("Pinkas").build(),
                 Person.builder().firstName("Jirka").lastName("Pinkas").build(),
-                Person.builder().firstName("Alex").lastName("Zabka").build()
+                Person.builder().firstName("Alex").lastName("Áron").build()
         );
 
         // 1. Trida, ktera implementuje Comparator<Person>
@@ -76,7 +74,9 @@ public class Main_01_Lambda {
         // FINALNI PODOBA!
 //        people.sort(Comparator.comparing(Person::getFirstName));
 
-        people.sort(Comparator.comparing(Person::getLastName).thenComparing(Person::getFirstName));
+        Collator czCollator = Collator.getInstance(new Locale("cs", "CZ"));
+
+        people.sort(Comparator.comparing(Person::getLastName, czCollator).thenComparing(Person::getFirstName, czCollator));
 
         // Method reference
         people.forEach(System.out::println);
